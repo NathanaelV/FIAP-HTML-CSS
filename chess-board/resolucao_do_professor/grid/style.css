@@ -1,0 +1,111 @@
+/* 
+Seleciona todos os elementos (*) e os pseudo-elementos (:before e :after)
+Define o box-sizing como border-box, fazendo com que padding e borda sejam incluídos no tamanho total dos elementos 
+*/
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+/* 
+Aplica a todos os elementos:
+- Define uma largura mínima e altura mínima de 0, evitando que flexbox ou grid forcem tamanhos maiores do que o necessário
+*/
+* {
+  min-width: 0;
+  min-height: 0;
+}
+
+/* 
+Estiliza o <body>:
+- Fundo branco
+- Usa flexbox para centralizar o conteúdo horizontal e verticalmente
+- Ocupar 100% da largura e altura da janela (100vw x 100vh)
+- Remove margens padrão do navegador
+- Adiciona um padding interno de 1rem
+*/
+body {
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 1rem;
+}
+
+/* 
+Estiliza o container principal:
+- Fundo preto
+- Usa Grid Layout (o display: flex é sobrescrito por display: grid)
+- Borda preta de 5px
+- Define 8 colunas e 8 linhas com tamanhos iguais (repeat(8, 1fr))
+- O grid flui em linhas (row)
+- Largura e altura fixas de 810px (um quadrado perfeito para o tabuleiro)
+*/
+.container {
+  background: black;
+  border: 5px solid black;
+  width: 810px;
+  height: 810px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  grid-auto-flow: row;
+}
+
+/* 
+Estiliza cada quadrado do tabuleiro:
+- Usa flexbox para centralizar o conteúdo (peças de xadrez) no centro de cada quadrado
+- Permite quebra de linha interna (não impacta tanto aqui)
+- Adiciona padding interno de 5px
+- Define tamanho grande para as peças (100px)
+- Define altura da linha para 1, evitando espaçamento vertical extra
+*/
+.square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 5px;
+  font-size: 100px;
+  line-height: 1;
+}
+
+/* 
+Estiliza todos os quadrados pares (2º, 4º, 6º...) no fluxo normal:
+- Fundo branco
+*/
+.square:nth-child(even) {
+  background-color: white;
+}
+
+/* 
+Estiliza todos os quadrados ímpares (1º, 3º, 5º...) no fluxo normal:
+- Fundo cinza escuro (#6f6f76)
+*/
+.square:nth-child(odd) {
+  background-color: #6f6f76;
+}
+
+/* 
+Corrige a padronização para cada nova linha do tabuleiro:
+- Quadrados de índices 1, 3, 5, 7 (em cada bloco de 16 elementos) têm fundo branco
+*/
+.square:nth-child(16n+1),
+.square:nth-child(16n+3),
+.square:nth-child(16n+5),
+.square:nth-child(16n+7) {
+  background-color: white;
+}
+
+/* 
+Também corrige:
+- Quadrados de índices 2, 4, 6, 8 (em cada bloco de 16 elementos) têm fundo cinza escuro
+*/
+.square:nth-child(16n+2),
+.square:nth-child(16n+4),
+.square:nth-child(16n+6),
+.square:nth-child(16n+8) {
+  background-color: #6f6f76;
+}

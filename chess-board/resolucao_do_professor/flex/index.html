@@ -1,0 +1,178 @@
+<!DOCTYPE html> <!-- Define que o documento é do tipo HTML5 -->
+
+<html lang="en"> <!-- Inicia o elemento HTML, definindo que o idioma do conteúdo é inglês -->
+
+  <head> <!-- Início da seção de cabeçalho (não visível ao usuário diretamente) -->
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 (suporte a vários caracteres especiais) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura a página para ser responsiva em dispositivos móveis -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!-- Instrui o Internet Explorer a usar a versão mais recente do mecanismo de renderização -->
+    <title>Chess - Flexbox</title> <!-- Define o título da página (aparece na aba do navegador) -->
+    <link rel="stylesheet" href="style.css"> <!-- Vincula uma folha de estilos externa chamada style.css -->
+  </head>
+
+  <body> <!-- Início da seção de conteúdo visível da página -->
+    <div class="container"> <!-- Div principal que agrupa todo o conteúdo do tabuleiro de xadrez -->
+
+      <div class="row"> <!-- Primeira linha do tabuleiro (peças pretas principais) -->
+        <div class="square"> <!-- Primeiro quadrado -->
+          <img src="img/black/tower.png" alt="tower"> <!-- Imagem da torre preta -->
+        </div>
+        <div class="square"> <!-- Segundo quadrado -->
+          <img src="img/black/horse.png" alt="horse"> <!-- Imagem do cavalo preto -->
+        </div>
+        <div class="square"> <!-- Terceiro quadrado -->
+          <img src="img/black/bishop.png" alt="bishop"> <!-- Imagem do bispo preto -->
+        </div>
+        <div class="square"> <!-- Quarto quadrado -->
+          <img src="img/black/queen.png" alt="queen"> <!-- Imagem da rainha preta -->
+        </div>
+        <div class="square"> <!-- Quinto quadrado -->
+          <img src="img/black/king.png" alt="king"> <!-- Imagem do rei preto -->
+        </div>
+        <div class="square"> <!-- Sexto quadrado -->
+          <img src="img/black/bishop.png" alt="bishop"> <!-- Imagem do bispo preto -->
+        </div>
+        <div class="square"> <!-- Sétimo quadrado -->
+          <img src="img/black/horse.png" alt="horse"> <!-- Imagem do cavalo preto -->
+        </div>
+        <div class="square"> <!-- Oitavo quadrado -->
+          <img src="img/black/tower.png" alt="tower"> <!-- Imagem da torre preta -->
+        </div>
+      </div>
+
+      <div class="row"> <!-- Segunda linha do tabuleiro (peões pretos) -->
+        <!-- Repetição de quadrados, cada um com um peão preto -->
+        <div class="square">
+          <img src="img/black/pawn.png" alt="pawn">
+        </div>
+        <!-- (repetido 8 vezes para os 8 peões) -->
+        <div class="square">
+          <img src="img/black/pawn.png" alt="pawn">
+        </div>
+        <div class="square">
+          <img src="img/black/pawn.png" alt="pawn">
+        </div>
+        <div class="square">
+          <img src="img/black/pawn.png" alt="pawn">
+        </div>
+        <div class="square">
+          <img src="img/black/pawn.png" alt="pawn">
+        </div>
+        <div class="square">
+          <img src="img/black/pawn.png" alt="pawn">
+        </div>
+        <div class="square">
+          <img src="img/black/pawn.png" alt="pawn">
+        </div>
+        <div class="square">
+          <img src="img/black/pawn.png" alt="pawn">
+        </div>
+      </div>
+
+      <div class="row"> <!-- Terceira linha do tabuleiro (vazia) -->
+        <!-- 8 quadrados vazios -->
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+      </div>
+
+      <div class="row"> <!-- Quarta linha do tabuleiro (vazia) -->
+        <!-- 8 quadrados vazios -->
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+      </div>
+
+      <div class="row"> <!-- Quinta linha do tabuleiro (vazia) -->
+        <!-- 8 quadrados vazios -->
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+      </div>
+
+      <div class="row"> <!-- Sexta linha do tabuleiro (vazia) -->
+        <!-- 8 quadrados vazios -->
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+      </div>
+
+    <div class="row"> <!-- Sétima linha do tabuleiro (peças brancas principais) -->
+      <div class="square">
+        <img src="img/white/tower.png" alt="tower"> <!-- Torre branca -->
+      </div>
+      <div class="square">
+        <img src="img/white/horse.png" alt="horse"> <!-- Cavalo branco -->
+      </div>
+      <div class="square">
+        <img src="img/white/bishop.png" alt="bishop"> <!-- Bispo branco -->
+      </div>
+      <div class="square">
+        <img src="img/white/queen.png" alt="queen"> <!-- Rainha branca -->
+      </div>
+      <div class="square">
+        <img src="img/white/king.png" alt="king"> <!-- Rei branco -->
+      </div>
+      <div class="square">
+        <img src="img/white/bishop.png" alt="bishop"> <!-- Bispo branco -->
+      </div>
+      <div class="square">
+        <img src="img/white/horse.png" alt="horse"> <!-- Cavalo branco -->
+      </div>
+      <div class="square">
+        <img src="img/white/tower.png" alt="tower"> <!-- Torre branca -->
+      </div>
+    </div>
+
+    <div class="row"> <!-- Oitava linha do tabuleiro (peões brancos) -->
+      <!-- Repetição de quadrados com imagens de peões brancos -->
+      <div class="square">
+        <img src="img/white/pawn.png" alt="pawn">
+      </div>
+      <div class="square">
+        <img src="img/white/pawn.png" alt="pawn">
+      </div>
+      <div class="square">
+        <img src="img/white/pawn.png" alt="pawn">
+      </div>
+      <div class="square">
+        <img src="img/white/pawn.png" alt="pawn">
+      </div>
+      <div class="square">
+        <img src="img/white/pawn.png" alt="pawn">
+      </div>
+      <div class="square">
+        <img src="img/white/pawn.png" alt="pawn">
+      </div>
+      <div class="square">
+        <img src="img/white/pawn.png" alt="pawn">
+      </div>
+      <div class="square">
+        <img src="img/white/pawn.png" alt="pawn">
+      </div>
+    </div>
+
+    </div> <!-- Fim da div .container -->
+  </body> <!-- Fim da seção de conteúdo da página -->
+
+</html> <!-- Fim do documento HTML -->

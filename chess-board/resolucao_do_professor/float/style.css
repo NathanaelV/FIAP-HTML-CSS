@@ -1,0 +1,64 @@
+/* Aplica box-sizing: border-box para todos os elementos, inclusive ::before e ::after
+   Faz com que padding e border sejam incluídos na largura e altura total do elemento */
+   *, :after, :before {
+    box-sizing: border-box;
+  }
+  
+  /* Define um valor mínimo de largura e altura para todos os elementos
+     (evita problemas de elementos colapsando para 0) */
+  * {
+    min-width: 0;
+    min-height: 0;
+  }
+  
+  /* Estilização do body (corpo da página) */
+  body {
+    background: white;                 /* Define o fundo da página como branco */
+    display: flex;                     /* Usa flexbox para alinhar o conteúdo */
+    align-items: center;               /* Alinha o conteúdo verticalmente ao centro */
+    justify-content: center;           /* Centraliza o conteúdo horizontalmente */
+    width: 100%;                       /* Ocupa toda a largura da janela */
+    height: 100vh;                     /* Altura igual a 100% da altura da viewport */
+    margin: 0;                         /* Remove margens padrão do navegador */
+    padding: 1rem;                     /* Adiciona um espaçamento interno de 1rem */
+  }
+  
+  /* Estilização do container que representa o tabuleiro de xadrez */
+  .container {
+    background: black;                 /* Fundo preto para o tabuleiro */
+    display: flex;                     /* Usa flexbox para organizar os quadrados */
+    border: 5px solid black;            /* Borda preta grossa em volta do tabuleiro */
+    flex-wrap: wrap;                   /* Permite que os quadrados quebrem para a próxima linha */
+    width: 810px;                      /* Largura fixa do tabuleiro (8 quadrados + borda) */
+    height: 810px;                     /* Altura fixa do tabuleiro */
+  }
+  
+  /* Estilização dos quadrados (casas) do tabuleiro */
+  .square {
+    width: 100px;                      /* Largura fixa para cada quadrado */
+    height: 100px;                     /* Altura fixa para cada quadrado */
+    float: left;                       /* Faz cada quadrado "flutuar" para o lado esquerdo */
+    display: flex;                     /* Usa flexbox dentro do quadrado */
+    align-items: center;               /* Centraliza o conteúdo verticalmente */
+    justify-content: center;           /* Centraliza o conteúdo horizontalmente */
+    line-height: 1;                    /* Define o espaçamento vertical entre linhas */
+    font-size: 100px;                  /* Define o tamanho da fonte (peças de xadrez) */
+  }
+  
+  /* Estilização específica para as casas pretas */
+  .black {
+    background-color: #6f6f76;         /* Define a cor de fundo (tom de cinza) para as casas pretas */
+  }
+  
+  /* Estilização específica para as casas brancas */
+  .white {
+    background-color: white;           /* Define a cor de fundo branco para as casas brancas */
+  }
+  
+  /* Clearfix para o container, útil caso elementos flutuantes interfiram no layout */
+  .clearfix::after {
+    content: "";                       /* Gera um conteúdo vazio */
+    display: table;                    /* Faz o elemento agir como uma tabela */
+    clear: both;                       /* Limpa floats (força o container a envolver seus filhos flutuantes) */
+  }
+  
