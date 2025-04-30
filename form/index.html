@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <form method="POST">
+            <h2>Cadastro</h2>
+            <!-- Título do formulário -->
+
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required placeholder="Ex: José Wilker">
+            <!-- Campo de entrada para o nome, obrigatório -->
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required placeholder="Ex: email@email.com">
+            <!-- Campo de entrada para e-mail, com validação automática de formato e obrigatório -->
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="Ex: 11 98456-5645" required>
+            <!-- Campo de entrada para telefone, obrigatório -->
+
+            <label for="gender">Gênero:</label>
+            <select name="gender" id="gender" required>
+                <option value="" disabled selected>
+                    Selecione o Gênero
+                </option>
+                <option value="M">
+                    Masculino
+                </option>
+                <option value="F">
+                    Feminino
+                </option>
+            </select>
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+            <!-- Campo de entrada para senha, com os caracteres ocultos e obrigatório -->
+
+            <label for="confirmacao-senha">Confirmação de Senha:</label>
+            <input type="password" id="confirmacao-senha" name="confirmacao-senha" required>
+            <!-- Campo para confirmar a senha, obrigatório -->
+
+            <button type="submit">Cadastrar</button>
+            <!-- Botão de envio do formulário -->
+        </form>
+    </div>
+</body>
+
+</html>

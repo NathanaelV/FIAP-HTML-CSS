@@ -1,0 +1,80 @@
+/* Estilos gerais */
+* {
+    margin: 0;                    /* Remove a margem padrão de todos os elementos */
+    padding: 0;                   /* Remove o preenchimento interno padrão de todos os elementos */
+    box-sizing: border-box;      /* Inclui padding e borda dentro da largura e altura definidas */
+}
+  
+body {
+    font-family: Arial, sans-serif;           /* Define a fonte principal da página */
+    background-color: #f4f4f4;                /* Define uma cor de fundo cinza clara */
+    display: flex;                            /* Usa flexbox para alinhar os itens */
+    justify-content: center;                  /* Centraliza horizontalmente o conteúdo */
+    align-items: center;                      /* Centraliza verticalmente o conteúdo */
+    min-height: 100vh;                            /* Altura da tela inteira (100% da viewport) */
+}
+  
+.form-container {
+    background-color: white;                  /* Fundo branco para o formulário */
+    padding: 20px;                            /* Espaçamento interno */
+    border-radius: 8px;                       /* Cantos arredondados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);/* Sombra suave ao redor do formulário */
+    width: 100%;                              /* Ocupa 100% da largura disponível */
+    max-width: 400px;                         /* Largura máxima para não ficar muito grande */
+}
+  
+h2 {
+    text-align: center;                       /* Centraliza o título */
+    color: #4CAF50;                           /* Cor verde para o texto */
+    margin-bottom: 20px;                      /* Espaço inferior */
+}
+  
+label {
+    display: block;                           /* Faz com que o label ocupe uma linha inteira */
+    margin: 8px 0 4px;                        /* Margem superior e inferior para espaçamento */
+    color: #333;                              /* Cor escura para o texto */
+}
+  
+input, select {
+    width: 100%;                              /* Campos ocupam toda a largura do container */
+    padding: 10px;                            /* Espaçamento interno dos campos */
+    margin-bottom: 15px;                      /* Espaço entre os campos */
+    border: 1px solid #ccc;                   /* Borda cinza clara */
+    border-radius: 4px;                       /* Bordas arredondadas */
+}
+
+select:invalid, 
+input:invalid {
+    border: 1px solid  red;
+}
+  
+input:focus {
+    border-color: #4CAF50;                    /* Altera a cor da borda para verde ao focar no campo */
+    outline: none;                            /* Remove o contorno padrão do navegador */
+}
+  
+button {
+    width: 100%;                              /* Botão ocupa toda a largura */
+    padding: 12px;                            /* Espaçamento interno do botão */
+    background-color: #4CAF50;                /* Cor de fundo verde */
+    border: none;                             /* Remove a borda padrão */
+    border-radius: 4px;                       /* Bordas arredondadas */
+    color: white;                             /* Texto branco */
+    font-size: 16px;                          /* Tamanho da fonte do botão */
+    cursor: pointer;                          /* Muda o cursor para indicar que é clicável */
+}
+  
+button:hover {
+    background-color: #45a049;                /* Muda a cor de fundo ao passar o mouse */
+}
+  
+/* Responsividade */
+@media (max-width: 600px) {                   /* Aplica os estilos dentro desse bloco apenas em telas menores que 600px */
+    .form-container {
+      padding: 15px;                          /* Reduz o padding para telas menores */
+    }
+  
+    input, button {
+      padding: 8px;                           /* Reduz o padding dos campos e botões */
+    }
+}
