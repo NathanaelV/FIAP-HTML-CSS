@@ -7,12 +7,45 @@
 </head>
 <body>
     <h1>Tabelas</h1>
-    <table>
-        <tr>
-            <th>Horário</th>
-            <th>Segunda</th>
-            <th>    </th>
-        </tr>
+    <table border="1" cellspacing="0" cellpadding="5">
+        <thead>
+            <tr>
+                <th>Horário</th>
+                <th>Segunda</th>
+                <th>Terça</th>
+                <th>Quarta</th>
+                <th>Quinta</th>
+                <th>Sexta</th>
+                <th>Sábado</th>
+                <th>Domingo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>08:00</td>
+                <td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td>
+            </tr>
+            <tr>
+                <td>12:00</td>
+                <!-- Mescla e ocupa o espaço de das colunas especificadas -->
+                <td colspan="3">Atividade 1</td>
+                <td></td><td></td><td></td> <!-- Precisei remover 2 <td> -->
+                <!-- Mescla e ocupa o epaço de baixo -->
+                <td rowspan="2">Atividade 42</td>
+            </tr>
+            <tr>
+                <td>15:00</td>
+                <!-- Precisei remover 1 <td> por causa do rowspan do <tr> acima -->
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td>20:00</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <!-- Aqui não tem nada, porém poderia ter conteúdo de rodapé -->
+        </tfoot>
     </table>
 </body>
 </html>
