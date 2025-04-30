@@ -18,6 +18,7 @@ body {
   /* Cor do texto padrão (cinza escuro) */
   min-height: 100vh;
   /* Garante que o body tenha pelo menos a altura total da tela */
+  /* Do header ao footer vai ocupar a tela inteira (Minhas palavras) */
   display: flex;
   /* Ativa o Flexbox no body */
   flex-direction: column;
