@@ -13,7 +13,7 @@
   
   /* Estilização do body (corpo da página) */
   body {
-    background: white;                 /* Define o fundo da página como branco */
+    background: white;               /* Define o fundo da página como branco */
     display: flex;                     /* Usa flexbox para alinhar o conteúdo */
     align-items: center;               /* Alinha o conteúdo verticalmente ao centro */
     justify-content: center;           /* Centraliza o conteúdo horizontalmente */
@@ -25,9 +25,9 @@
   
   /* Estilização do container que representa o tabuleiro de xadrez */
   .container {
-    background: black;                 /* Fundo preto para o tabuleiro */
+    background: black;               /* Fundo preto para o tabuleiro */
     display: flex;                     /* Usa flexbox para organizar os quadrados */
-    border: 5px solid black;            /* Borda preta grossa em volta do tabuleiro */
+    border: 5px solid black;         /* Borda preta grossa em volta do tabuleiro */
     flex-wrap: wrap;                   /* Permite que os quadrados quebrem para a próxima linha */
     width: 810px;                      /* Largura fixa do tabuleiro (8 quadrados + borda) */
     height: 810px;                     /* Altura fixa do tabuleiro */
@@ -47,18 +47,18 @@
   
   /* Estilização específica para as casas pretas */
   .black {
-    background-color: #6f6f76;         /* Define a cor de fundo (tom de cinza) para as casas pretas */
+    background-color: #6f6f76;  /* Define a cor de fundo (tom de cinza) para as casas pretas */
   }
   
   /* Estilização específica para as casas brancas */
   .white {
-    background-color: white;           /* Define a cor de fundo branco para as casas brancas */
+    background-color: white;    /* Define a cor de fundo branco para as casas brancas */
   }
   
   /* Clearfix para o container, útil caso elementos flutuantes interfiram no layout */
   .clearfix::after {
-    content: "";                       /* Gera um conteúdo vazio */
-    display: table;                    /* Faz o elemento agir como uma tabela */
-    clear: both;                       /* Limpa floats (força o container a envolver seus filhos flutuantes) */
+    content: "";      /* Gera um conteúdo vazio */
+    display: table;   /* Faz o elemento agir como uma tabela */
+    clear: both;      /* Limpa floats (força o container a envolver seus filhos flutuantes) */
   }
   
