@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 03</title>
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Movies</h1>
+    <main>
+      <figure>
+        <img onclick="openImage(this)" src="./images/aladin.jpg" alt="Aladin">
+      </figure>
+      <figure>
+        <img onclick="openImage(this)" src="./images/avengers.jpg" alt="Avengers">
+      </figure>
+      <figure>
+        <img onclick="openImage(this)" src="./images/gg.jpg" alt="Guardians of the Galaxy">
+      </figure>
+      <figure>
+        <img onclick="openImage(this)" src="./images/hp.jpg" alt="Harry Potter">
+      </figure>
+    </main>
+
+    <div id="image-opened" class="manual-dialog">
+      <img onclick="zoomImage(this, event)" id="image-element" src="" alt="">
+      <button onclick="closeImage()">X</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

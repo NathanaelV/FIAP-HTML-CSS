@@ -45,6 +45,13 @@ function calcular(num1, num2, operacao) {
 
 function calculadora() {
     dadosCalculadora()
+    
+    // Melhor que usar variáveis globais
+    // Ou colocar um prompt em cada função
+    let num1 = prompt('Digite o primeiro número:')
+    let num2 = prompt('digite o segundo número:')
+    let operacao = prompt('Digite a operação desejada: +, -, *, /')
+
     const resultado = calcular(num1, num2, operacao)
     if (resultado !== undefined && resultado !== null) {
         alert(`O resultado da operação ${num1} ${operacao} ${num2} é ${resultado}`)
@@ -102,6 +109,8 @@ function calculadora() {
 // Converter idade para dias
 
 function dadosIdade() {
+    // Preciso converter para número antes de começar a trabalhar
+    // Evitar que ocorra uma concatenação com uma string '1' + 2 = '12'
     return prompt('Digite sua idade em anos')
 }
 
@@ -125,6 +134,8 @@ function conversorIdade() {
 // Conversor de Temperatura: Celsisus para Fahrenheit
 
 function dadosTemperatura() {
+    // Preciso converter para número antes de começar a trabalhar
+    // Evitar que ocorra uma concatenação com uma string '1' + 2 = '12'
     return prompt('Digite a temperatura em graus Celsius')
 }
 

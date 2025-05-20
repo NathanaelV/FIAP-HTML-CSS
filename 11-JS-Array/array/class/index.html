@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demonstração de Arrays em JavaScript</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Arrays em JavaScript</h1>
+
+    <section id="array-creation">
+      <h2>Criação de Arrays</h2>
+      <div class="demo-box">
+        <input type="text" id="newElement" placeholder="Digite um elemento">
+        <button onclick="addElement()">Adicionar Elemento</button>
+        <div id="currentArray"></div>
+      </div>
+    </section>
+
+    <section id="array-operations">
+      <h2>Operações com Arrays</h2>
+      <div class="demo-box">
+        <div class="buttons">
+          <button onclick="popElement()">Pop</button>
+          <button onclick="pushElement()">Push</button>
+          <button onclick="shiftElement()">Shift</button>
+          <button onclick="unshiftElement()">Unshift</button>
+        </div>
+        <div id="operationsResult"></div>
+      </div>
+    </section>
+
+    <section id="array-iteration">
+      <h2>Iteração e Transformação</h2>
+      <div class="demo-box">
+        <div class="buttons">
+          <button onclick="demonstrateForEach()">forEach</button>
+          <button onclick="demonstrateMap()">map</button>
+          <button onclick="demonstrateFilter()">filter</button>
+          <button onclick="demonstrateReduce()">reduce</button>
+        </div>
+        <div id="iterationResult"></div>
+      </div>
+    </section>
+
+    <section id="array-sorting">
+      <h2>Ordenação e Busca</h2>
+      <div class="demo-box">
+        <div class="buttons">
+          <button onclick="sortArray()">Sort</button>
+          <button onclick="reverseArray()">Reverse</button>
+          <button onclick="searchElement()">Search</button>
+        </div>
+        <div id="sortingResult"></div>
+      </div>
+    </section>
+
+    <section id="matrix-demo">
+      <h2>Array Multidimensional</h2>
+      <div class="demo-box">
+        <div id="matrixDisplay"></div>
+        <button onclick="rotateMatrix()">Rotacionar Matriz</button>
+      </div>
+    </section>
+
+    <section id="dom-array">
+      <h2>Manipulação de Lista com QuerySelector</h2>
+      <div class="demo-box">
+        <div class="add-item-controls">
+          <input type="text" id="newItemText" placeholder="Nome do item">
+          <select id="categorySelect">
+            <option value="A">Categoria A</option>
+            <option value="B">Categoria B</option>
+            <option value="C">Categoria C</option>
+          </select>
+          <button onclick="addNewItem()">Adicionar Item</button>
+        </div>
+        <ul class="item-list">
+          <li class="list-item">Item 1 - Categoria A</li>
+          <li class="list-item">Item 2 - Categoria B</li>
+          <li class="list-item">Item 3 - Categoria A</li>
+          <li class="list-item">Item 4 - Categoria C</li>
+          <li class="list-item">Item 5 - Categoria B</li>
+        </ul>
+        <div class="buttons">
+          <button onclick="highlightCategory('A')">Destacar Categoria A</button>
+          <button onclick="highlightCategory('B')">Destacar Categoria B</button>
+          <button onclick="highlightCategory('C')">Destacar Categoria C</button>
+          <button onclick="resetHighlight()">Resetar Destaque</button>
+          <button onclick="removeSelectedItems()" class="danger">Remover Itens Destacados</button>
+        </div>
+        <div id="listStats"></div>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

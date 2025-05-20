@@ -41,6 +41,7 @@ body {
     /* Como faço para posicionar o número no canto superior esquerdo? */
     /* Se eu diminuir o tamanho do símbolo, o número não fica no canto superior */
     /* Posiciona na esquerda */
+    /* margin-bottom: auto; */
     align-self: flex-start;
     font-size: 12px;
 }
@@ -73,8 +74,11 @@ body {
     background-color: lightsalmon;
 }
 
+/* Por causa da especificidade, quanto mais específico o comando, maior a prioridade. Primeiro especificidade */
+/* A ordem é o último tópico de prioridade */
 .row .elemento:nth-child(2),
 /* Por que não posso só fazer row:nth-child(3)? */
+/* Por causa da especificidade. Primeiro especificidade */
 .row:nth-child(3):nth-child(-n+4) .elemento:nth-child(n+13):nth-child(-n+13),
 /* Por que não posso só fazer row:nth-child(4)? */
 .row:nth-child(4):nth-child(-n+4) .elemento:nth-child(n+13):nth-child(-n+14),
@@ -100,4 +104,10 @@ body {
 .row:nth-child(n+6):nth-child(-n+7) .elemento:nth-child(3),
 .row:nth-child(n+9):nth-child(-n+10) .elemento {
     background-color: var(--serie-color);
+}
+
+.metal {
+    /* Coloca uma altura em na div.metal */
+    /* Dessa maneira não preciso colocar uma letra e colorir com a cor de fundo */
+    height: 28px;
 }

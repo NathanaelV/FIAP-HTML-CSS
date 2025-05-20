@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+form {
+  width: 100%;
+  max-width: 320px;
+}
+
+h1 {
+  margin: 0 0 1rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+  resize: none;
+}
+
+input:user-invalid,
+textarea:user-invalid {
+  border-color: red;
+  outline: red;
+}
+
+button {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid black;
+  border-radius: 0.25rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #eee;
+}
+
+#error p {
+  text-align: center;
+  color: red;
+  font-weight: 700;
+  margin: 0;
+}
+
+#error p::before {
+  content: "⚠️ ";
+}
+
+#result {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  display: none;
+}
+
+#result p {
+  margin: 0;
+}

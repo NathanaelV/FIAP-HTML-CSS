@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos JavaScript</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Seção: Eventos de Mouse -->
+  <section>
+    <h3>Eventos de Mouse</h3>
+    <div class="event-block" id="click-event">
+      <h5>click</h5>
+      <p>Explicação: disparado quando um elemento é clicado.</p>
+      <button id="button-click" onclick="handleClick(event)">Teste
+        via onclick</button>
+      <button id="button-click-listener">Teste via addEventListener</button>
+      <h6>Sobre o event</h6>
+      <table class="event-attributes">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Uso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>target</td>
+            <td>Elemento que disparou o evento</td>
+            <td><code>event.target.id</code></td>
+          </tr>
+          <tr>
+            <td>type</td>
+            <td>Tipo do evento</td>
+            <td><code>event.type</code></td>
+          </tr>
+          <tr>
+            <td>timeStamp</td>
+            <td>Tempo em milissegundos desde o carregamento da página</td>
+            <td><code>event.timeStamp</code></td>
+          </tr>
+          <tr>
+            <td>Outros</td>
+            <td>Outros atributos do evento</td>
+            <td><code>event.clientX</code>, <code>event.clientY</code>, etc.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="event-block" id="dblclick-event">
+      <h5>dblclick</h5>
+      <p>Explicação: disparado quando dois cliques rápidos são feitos.</p>
+      <button id="button-dblclick" ondblclick="handleDblClick(event)">Teste via ondblclick</button>
+      <button id="button-dblclick-listener">Teste via addEventListener</button>
+      <h6>Sobre o event</h6>
+      <table class="event-attributes">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Uso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>target</td>
+            <td>Elemento que disparou o evento</td>
+            <td><code>event.target.id</code></td>
+          </tr>
+          <tr>
+            <td>detail</td>
+            <td>Número de cliques consecutivos</td>
+            <td><code>event.detail</code></td>
+          </tr>
+          <tr>
+            <td>timeStamp</td>
+            <td>Tempo em milissegundos desde o carregamento da página</td>
+            <td><code>event.timeStamp</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="event-block" id="mousedown-event">
+      <h5>mousedown</h5>
+      <p>Explicação: disparado quando um botão do mouse é pressionado.</p>
+      <button id="button-mousedown" onmousedown="handleMouseDown(event)">Teste via onmousedown</button>
+      <button id="button-mousedown-listener">Teste via addEventListener</button>
+      <h6>Sobre o event</h6>
+      <table class="event-attributes">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Uso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>button</td>
+            <td>Qual botão do mouse foi pressionado (0: esquerdo, 1: meio, 2: direito)</td>
+            <td><code>event.button</code></td>
+          </tr>
+          <tr>
+            <td>buttons</td>
+            <td>Estado dos botões do mouse</td>
+            <td><code>event.buttons</code></td>
+          </tr>
+          <tr>
+            <td>clientX/clientY</td>
+            <td>Coordenadas do mouse relativas à janela</td>
+            <td><code>event.clientX</code>, <code>event.clientY</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="event-block" id="mouseup-event">
+      <h5>mouseup</h5>
+      <p>Explicação: disparado quando um botão do mouse é liberado.</p>
+      <button id="button-mouseup" onmouseup="handleMouseUp(event)">Teste via onmouseup</button>
+      <button id="button-mouseup-listener">Teste via addEventListener</button>
+      <h6>Sobre o event</h6>
+      <table class="event-attributes">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Uso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>button</td>
+            <td>Qual botão do mouse foi liberado</td>
+            <td><code>event.button</code></td>
+          </tr>
+          <tr>
+            <td>target</td>
+            <td>Elemento que disparou o evento</td>
+            <td><code>event.target</code></td>
+          </tr>
+          <tr>
+            <td>clientX/clientY</td>
+            <td>Coordenadas do mouse relativas à janela</td>
+            <td><code>event.clientX</code>, <code>event.clientY</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="event-block" id="mousemove-event">
+      <h5>mousemove</h5>
+      <p>Explicação: disparado quando o mouse é movido.</p>
+      <button onmousemove="handleMouseMove(event)">Teste via onmousemove</button>
+      <button id="button-mousemove-listener">Teste via addEventListener</button>
+      <h6>Sobre o event</h6>
+      <table class="event-attributes">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Uso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>clientX/clientY</td>
+            <td>Coordenadas do mouse relativas à janela</td>
+            <td><code>event.clientX</code>, <code>event.clientY</code></td>
+          </tr>
+          <tr>
+            <td>movementX/movementY</td>
+            <td>Movimento relativo desde último evento</td>
+            <td><code>event.movementX</code>, <code>event.movementY</code></td>
+          </tr>
+          <tr>
+            <td>screenX/screenY</td>
+            <td>Coordenadas do mouse relativas à tela</td>
+            <td><code>event.screenX</code>, <code>event.screenY</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="event-block" id="mouseover-event">
+      <h5>mouseover</h5>
+      <p>Explicação: disparado quando o mouse passa por cima de um elemento.</p>
+      <button onmouseover="handleMouseOver(event)">Teste via onmouseover</button>
+      <button id="button-mouseover-listener">Teste via addEventListener</button>
+      <h6>Sobre o event</h6>
+      <table class="event-attributes">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Uso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>target</td>
+            <td>Elemento que disparou o evento</td>
+            <td><code>event.target</code></td>
+          </tr>
+          <tr>
+            <td>relatedTarget</td>
+            <td>Elemento de onde o mouse veio</td>
+            <td><code>event.relatedTarget</code></td>
+          </tr>
+          <tr>
+            <td>clientX/clientY</td>
+            <td>Coordenadas do mouse relativas à janela</td>
+            <td><code>event.clientX</code>, <code>event.clientY</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="event-block" id="mouseout-event">
+      <h5>mouseout</h5>
+      <p>Explicação: disparado quando o mouse sai de cima de um elemento.</p>
+      <button onmouseout="handleMouseOut(event)">Teste via onmouseout</button>
+      <button id="button-mouseout-listener">Teste via addEventListener</button>
+      <h6>Sobre o event</h6>
+      <table class="event-attributes">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Uso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>target</td>
+            <td>Elemento que disparou o evento</td>
+            <td><code>event.target</code></td>
+          </tr>
+          <tr>
+            <td>relatedTarget</td>
+            <td>Elemento para onde o mouse foi</td>
+            <td><code>event.relatedTarget</code></td>
+          </tr>
+          <tr>
+            <td>clientX/clientY</td>
+            <td>Coordenadas do mouse relativas à janela</td>
+            <td><code>event.clientX</code>, <code>event.clientY</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="event-block" id="mouseenter-event">
+      <h5>mouseenter</h5>
+      <p>Explicação: disparado quando o mouse entra em um elemento.</p>
+      <button onmouseenter="handleMouseEnter(event)">Teste via onmouseenter</button>
+      <button id="button-mouseenter-listener">Teste via addEventListener</button>
+      <h6>Sobre o event</h6>
+      <table class="event-attributes">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Uso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>target</td>
+            <td>Elemento que disparou o evento</td>
+            <td><code>event.target</code></td>
+          </tr>
+          <tr>
+            <td>clientX/clientY</td>
+            <td>Coordenadas do mouse relativas à janela</td>
+            <td><code>event.clientX</code>, <code>event.clientY</code></td>
+          </tr>
+          <tr>
+            <td>timeStamp</td>
+            <td>Tempo em milissegundos desde o carregamento da página</td>
+            <td><code>event.timeStamp</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="event-block" id="mouseleave-event">
+      <h5>mouseleave</h5>
+      <p>Explicação: disparado quando o mouse deixa um elemento.</p>
+      <button onmouseleave="handleMouseLeave(event)">Teste via onmouseleave</button>
+      <button id="button-mouseleave-listener">Teste via addEventListener</button>
+      <h6>Sobre o event</h6>
+      <table class="event-attributes">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Uso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>target</td>
+            <td>Elemento que disparou o evento</td>
+            <td><code>event.target</code></td>
+          </tr>
+          <tr>
+            <td>clientX/clientY</td>
+            <td>Coordenadas do mouse relativas à janela</td>
+            <td><code>event.clientX</code>, <code>event.clientY</code></td>
+          </tr>
+          <tr>
+            <td>timeStamp</td>
+            <td>Tempo em milissegundos desde o carregamento da página</td>
+            <td><code>event.timeStamp</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Seção: Eventos de Teclado -->
+  <section>
+    <h3>Eventos de Teclado</h3>
+    <div class="event-block" id="keydown-event">
+      <h5>keydown</h5>
+      <p>Explicação: disparado quando uma tecla é pressionada.</p>
+      <input type="text" onkeydown="handleKeyDown(event)" placeholder="Teste via onkeydown">
+      <input id="input-keydown-listener" type="text" placeholder="Teste via addEventListener">
+      <h6>Sobre o event</h6>
+      <table class="event-attributes">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Uso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>key</td>
+            <td>Valor da tecla pressionada</td>
+            <td><code>event.key</code></td>
+          </tr>
+          <tr>
+            <td>code</td>
+            <td>Código físico da tecla</td>
+            <td><code>event.code</code></td>
+          </tr>
+          <tr>
+            <td>keyCode</td>
+            <td>Código numérico da tecla (deprecated)</td>
+            <td><code>event.keyCode</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="event-block" id="keyup-event">
+      <h5>keyup</h5>
+      <p>Explicação: disparado quando uma tecla é liberada.</p>
+      <input type="text" onkeyup="handleKeyUp(event)" placeholder="Teste via onkeyup">
+      <input id="input-keyup-listener" type="text" placeholder="Teste via addEventListener">
+      <h6>Sobre o event</h6>
+      <table class="event-attributes">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Uso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>key</td>
+            <td>Valor da tecla liberada</td>
+            <td><code>event.key</code></td>
+          </tr>
+          <tr>
+            <td>code</td>
+            <td>Código físico da tecla</td>
+            <td><code>event.code</code></td>
+          </tr>
+          <tr>
+            <td>repeat</td>
+            <td>Se a tecla estava sendo repetida</td>
+            <td><code>event.repeat</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="event-block" id="keypress-event">
+      <h5>keypress</h5>
+      <p>Explicação: disparado quando uma tecla é pressionada e liberada.</p>
+      <input type="text" onkeypress="handleKeyPress(event)" placeholder="Teste via onkeypress">
+      <input id="input-keypress-listener" type="text" placeholder="Teste via addEventListener">
+      <h6>Sobre o event</h6>
+      <table class="event-attributes">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Uso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>key</td>
+            <td>Caractere gerado pela tecla</td>
+            <td><code>event.key</code></td>
+          </tr>
+          <tr>
+            <td>charCode</td>
+            <td>Código Unicode do caractere (deprecated)</td>
+            <td><code>event.charCode</code></td>
+          </tr>
+          <tr>
+            <td>which</td>
+            <td>Código da tecla (deprecated)</td>
+            <td><code>event.which</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Seção: Eventos de Formulário -->
+  <section>
+    <h3>Eventos de Formulário</h3>
+    <form class="event-block" id="submit-event" onsubmit="handleSubmit(event)">
+      <h5>submit</h5>
+      <p>Explicação: disparado quando um formulário é enviado.</p>
+      <button type="submit">Teste via onsubmit</button>
+      <button id="input-submit-listener" type="button">Teste via addEventListener</button>
+      <h6>Sobre o event</h6>
+      <table class="event-attributes">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Uso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>target</td>
+            <td>O formulário que disparou o evento</td>
+            <td><code>event.target</code></td>
+          </tr>
+          <tr>
+            <td>preventDefault()</td>
+            <td>Método para prevenir envio padrão</td>
+            <td><code>event.preventDefault()</code></td>
+          </tr>
+          <tr>
+            <td>submitter</td>
+            <td>Elemento que iniciou o envio</td>
+            <td><code>event.submitter</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+    <div class="event-block" id="change-event">
+      <h5>change</h5>
+      <p>Explicação: disparado quando o valor de um elemento de formulário é alterado.</p>
+      <input type="text" onchange="handleChange(event)" placeholder="Teste via onchange">
+      <input id="input-change-listener" type="text" placeholder="Teste via addEventListener">
+      <h6>Sobre o event</h6>
+      <table class="event-attributes">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Uso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>target</td>
+            <td>Elemento que teve valor alterado</td>
+            <td><code>event.target</code></td>
+          </tr>
+          <tr>
+            <td>target.value</td>
+            <td>Novo valor do elemento</td>
+            <td><code>event.target.value</code></td>
+          </tr>
+          <tr>
+            <td>timeStamp</td>
+            <td>Momento da mudança</td>
+            <td><code>event.timeStamp</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="event-block" id="input-event">
+      <h5>input</h5>
+      <p>Explicação: disparado quando o conteúdo de um elemento de formulário é alterado.</p>
+      <input type="text" oninput="handleInput(event)" placeholder="Teste via oninput">
+      <input id="input-input-listener" placeholder="Teste via addEventListener">
+      <h6>Sobre o event</h6>
+      <table class="event-attributes">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Uso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>target</td>
+            <td>Elemento sendo editado</td>
+            <td><code>event.target</code></td>
+          </tr>
+          <tr>
+            <td>data</td>
+            <td>Caracteres inseridos</td>
+            <td><code>event.data</code></td>
+          </tr>
+          <tr>
+            <td>inputType</td>
+            <td>Tipo de entrada (insertText, deleteContent, etc)</td>
+            <td><code>event.inputType</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="event-block" id="focus-event">
+      <h5>focus</h5>
+      <p>Explicação: disparado quando um elemento recebe o foco.</p>
+      <input type="text" onfocus="handleFocus(event)" placeholder="Teste via onfocus">
+      <input id="input-focus-listener" placeholder="Teste via addEventListener">
+      <h6>Sobre o event</h6>
+      <table class="event-attributes">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Uso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>target</td>
+            <td>Elemento que recebeu o foco</td>
+            <td><code>event.target</code></td>
+          </tr>
+          <tr>
+            <td>relatedTarget</td>
+            <td>Elemento que perdeu o foco</td>
+            <td><code>event.relatedTarget</code></td>
+          </tr>
+          <tr>
+            <td>timeStamp</td>
+            <td>Momento do foco</td>
+            <td><code>event.timeStamp</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="event-block" id="blur-event">
+      <h5>blur</h5>
+      <p>Explicação: disparado quando um elemento perde o foco.</p>
+      <input type="text" onblur="handleBlur(event)" placeholder="Teste via onblur">
+      <input id="input-blur-listener" placeholder="Teste via addEventListener">
+      <h6>Sobre o event</h6>
+      <table class="event-attributes">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Uso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>target</td>
+            <td>Elemento que perdeu o foco</td>
+            <td><code>event.target</code></td>
+          </tr>
+          <tr>
+            <td>relatedTarget</td>
+            <td>Elemento que recebeu o foco</td>
+            <td><code>event.relatedTarget</code></td>
+          </tr>
+          <tr>
+            <td>timeStamp</td>
+            <td>Momento da perda de foco</td>
+            <td><code>event.timeStamp</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Seção: Eventos de Janela -->
+  <section>
+    <h3>Eventos de Janela</h3>
+    <div class="event-block" id="load-event">
+      <h5>load</h5>
+      <p>Explicação: disparado quando a janela ou recurso é carregado.</p>
+      <div id="button-load-listener">Tempo de load: </div>
+      <h6>Sobre o event</h6>
+      <table class="event-attributes">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Uso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>target</td>
+            <td>Elemento carregado</td>
+            <td><code>event.target</code></td>
+          </tr>
+          <tr>
+            <td>timeStamp</td>
+            <td>Momento do carregamento</td>
+            <td><code>event.timeStamp</code></td>
+          </tr>
+          <tr>
+            <td>type</td>
+            <td>Tipo do evento ('load')</td>
+            <td><code>event.type</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="event-block" id="resize-event">
+      <h5>resize</h5>
+      <p>Explicação: disparado quando a janela é redimensionada.</p>
+      <div id="button-resize-listener">Tamanho da janela: </div>
+      <h6>Sobre o event</h6>
+      <table class="event-attributes">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Uso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>target</td>
+            <td>Objeto window</td>
+            <td><code>event.target</code></td>
+          </tr>
+          <tr>
+            <td>type</td>
+            <td>Tipo do evento ('resize')</td>
+            <td><code>event.type</code></td>
+          </tr>
+          <tr>
+            <td>timeStamp</td>
+            <td>Momento do redimensionamento</td>
+            <td><code>event.timeStamp</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="event-block" id="scroll-event">
+      <h5>scroll</h5>
+      <p>Explicação: disparado quando a barra de rolagem é movida.</p>
+      <div id="button-scroll-listener">Scroll position: </div>
+      <h6>Sobre o event</h6>
+      <table class="event-attributes">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Uso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>target</td>
+            <td>Elemento que foi rolado</td>
+            <td><code>event.target</code></td>
+          </tr>
+          <tr>
+            <td>scrollTop</td>
+            <td>Posição vertical da rolagem</td>
+            <td><code>element.scrollTop</code></td>
+          </tr>
+          <tr>
+            <td>scrollLeft</td>
+            <td>Posição horizontal da rolagem</td>
+            <td><code>element.scrollLeft</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Seção: Outros Eventos -->
+  <section>
+    <h3>Outros Eventos</h3>
+    <div class="event-block" id="contextmenu-event">
+      <h5>contextmenu</h5>
+      <p>Explicação: disparado ao abrir o menu de contexto.</p>
+      <button oncontextmenu="handleContextMenu(event)">Teste via oncontextmenu</button>
+      <button id="button-contextmenu-listener">Teste via addEventListener</button>
+      <h6>Sobre o event</h6>
+      <table class="event-attributes">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Uso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>preventDefault()</td>
+            <td>Previne menu padrão</td>
+            <td><code>event.preventDefault()</code></td>
+          </tr>
+          <tr>
+            <td>clientX/clientY</td>
+            <td>Coordenadas do clique</td>
+            <td><code>event.clientX</code>, <code>event.clientY</code></td>
+          </tr>
+          <tr>
+            <td>button</td>
+            <td>Botão usado (geralmente 2)</td>
+            <td><code>event.button</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
